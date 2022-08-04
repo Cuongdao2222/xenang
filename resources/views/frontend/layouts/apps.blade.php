@@ -316,7 +316,50 @@
                                 </div>
                                 <!-- Collect the nav links, forms, and other content for toggling -->
                                 <div class="navbar-inverse side-collapse in" id="main-navbar">
+
                                     <ul class="nav navbar-nav">
+                                        <li class="active"><a href="/" class="home-link"><i class="fa fa-home"></i></a></li>
+                                        <li><a href="/gioi-thieu-a18.html">Giới thiệu</a>
+                                        </li>
+                                        <li>
+                                            <a href="/san-pham.html" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sản phẩm <span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="/mercedes-a-class-c57.html">Xe nâng điện</a>
+                                                </li>
+                                                <li><a href="/mercedes-c-class-c58.html">Mercedes C Class</a>
+                                                </li>
+                                                <li><a href="/mercedes-e-class-c60.html">Mercedes E Class</a>
+                                                </li>
+                                                <li><a href="/mercedes-s-class-c61.html">Mercedes S Class</a>
+                                                </li>
+                                                <li><a href="/xe-mercedes-c62.html">Xe Mercedes</a>
+                                                </li>
+                                                <li><a href="/mercedes-gla-c63.html">Mercedes GLA</a>
+                                                </li>
+                                                <li><a href="/mercedes-glc-c64.html">Mercedes GLC</a>
+                                                </li>
+                                                <li><a href="/mercedes-cla-c59.html">Mercedes CLA</a>
+                                                </li>
+                                                <li><a href="/mercedes-gle-c65.html">Mercedes GLE</a>
+                                                </li>
+                                                <li><a href="/mercedes-gls-c66.html">Mercedes GLS</a>
+                                                </li>
+                                                <li><a href="/glb-class-c67.html">Mercedes GLB</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="/bang-gia-xe.html">Bảng giá xe</a>
+                                        </li>
+                                        <li><a href="/tin-tuc-su-kien-l88.html">Tin tức sự kiện</a>
+                                        </li>
+                                        <li><a href="/khuyen-mai-l89.html">Khuyến mãi</a>
+                                        </li>
+                                        <li><a href="/bao-hiem-a19.html">Bảo hiểm</a>
+                                        </li>
+                                        <li><a href="/lien-he.html">Liên hệ</a>
+                                        </li>
+                                    </ul>
+                                    <!-- <ul class="nav navbar-nav">
                                         <li><a href="index.htm" class="home-link"><i class="fa fa-home"></i></a></li>
                                         <li><a href="gioi-thieu-a18.html">Xe nâng tay</a>
                                         </li>
@@ -336,7 +379,7 @@
                                         <li><a href="#">Xe nâng bán tự động</a>
                                         </li>
 
-                                        <!-- <li><a href="#">Xe nâng người</a>
+                                        <li><a href="#">Xe nâng người</a>
                                         </li>
 
                                         <li><a href="#">Bán nâng người</a>
@@ -348,7 +391,7 @@
                                         <li><a href="#">Xe nâng cũ giá rẻ</a>
                                         </li> -->
                                      
-                                    </ul>
+                                    <!-- </ul> -->
                                 </div>
                                 <!-- /.navbar-collapse -->
                             </div>
