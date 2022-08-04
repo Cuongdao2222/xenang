@@ -66,6 +66,9 @@ Route::group(['prefix' => 'admins','middleware' => 'auth'], function() {
 
 Route::get('/lien-he', 'Frontend\blogController@lienhe')->name('lien-he');
 
+
+Route::get('/crawllink', 'crawlController@updateContent');
+
 Route::get('/san-pham/san-pham-da-thi-cong', 'Frontend\blogController@sanphamdathicong')->name('spdathicong');
 
 
@@ -80,7 +83,7 @@ Route::get('cart.html', 'Frontend\blogController@showCart')->name('cart');
 
 Route::get('add-cart', 'Frontend\blogController@addProductToCart')->name('addcart');
 
-
+Route::get('add-carts', 'Frontend\blogController@addProductToCarts')->name('addcarts');
 
 
 Route::get('/{slug}', 'Frontend\blogController@index')->name('list');
@@ -88,9 +91,6 @@ Route::get('/{slug}', 'Frontend\blogController@index')->name('list');
 Route::get('bai-viet/{slug}', 'Frontend\blogController@detail')->name('details');
 
 Route::get('imagescontent/{id}', 'productController@imagecontent')->name('imagescontent');
-
-
-
 
 Route::get('san-pham/{slug}', 'Frontend\blogController@productDetails')->name('product-details');
 

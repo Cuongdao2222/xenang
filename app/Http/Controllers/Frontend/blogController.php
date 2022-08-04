@@ -26,12 +26,14 @@ class blogController extends Controller
             if($checkCategory->parent_id == 0){
                 $datas = DB::table('categories')->Join('posts', 'categories.id', '=', 'posts.category')->where('categories.link',$data)->get();
 
-
                 return view('frontend.category',compact('datas'));
             }
             else{
 
+
                 $datas = DB::table('categories')->Join('products', 'categories.id', '=', 'products.category')->where('categories.link',$data)->get();
+
+              
 
                 return view('frontend.categoryproduct',compact('datas'));
                
@@ -64,7 +66,6 @@ class blogController extends Controller
     public function addProductToCart(Request $request)
     {
         
-
         $id = $request->id;
         
         $data_Product = products::find($id);
@@ -74,11 +75,27 @@ class blogController extends Controller
              Cart::add(['id' => $id, 'name' => $data_Product->name,  'qty' => 1, 'price' => $data_Product->price, 'weight' => '0', 'options' => ['image' => $data_Product->image]]);
 
         }
+        return redirect(route('cart'));
 
-        return redirect()->back();
-
-       
     }
+
+     public function addProductToCarts(Request $request)
+    {
+        
+        $id = $request->id;
+        
+        $data_Product = products::find($id);
+
+        if(!empty($data_Product->id)){
+
+             Cart::add(['id' => $id, 'name' => $data_Product->name,  'qty' => 1, 'price' => $data_Product->price, 'weight' => '0', 'options' => ['image' => $data_Product->image]]);
+
+        }
+        return redirect(route('product-details', $data_Product->link))->with('msg', 'thêm thành công');;
+
+    }
+
+
 
     public function showCart()
     {

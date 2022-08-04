@@ -46,6 +46,52 @@ class crawlController extends Controller
 
     }
 
+
+    public function crawl_link()
+    {
+        $link = 'http://xenangminhanh.com/product-category/xe-nang-moi-trung-quoc/';
+
+        $html = file_get_html(trim($link));
+
+        $links = $html->find('.dmpro-img  .post-thumbnail');
+
+        $image = $html->find('.dmpro-img  img');
+
+        $name = $html->find('.dmpro-h4 a');
+
+        for ($i=0; $i < count($image); $i++) { 
+           
+            DB::table('products')->insert(['link'=>$links[$i]->href, 'name'=>strip_tags($name[$i]), 'images'=>$image[$i]->src]);
+        }
+
+        echo "thanh cong";
+
+    }
+
+    public function updateContent($value='')
+    {
+        $number = 27;
+
+        for ($i=27; $i < 52; $i++) { 
+            $product = product::find($i);
+
+            $product->link = convertSlug($product->name);
+
+            // $product->price =10000;
+            // $product->quatity = 1;
+            // $product->category = 2;
+            // $link = $product->link;
+
+            // $html =  file_get_html(trim($link));
+            // $content = html_entity_decode($html->find('#tab-description', 0));
+            // $product->content = $content;
+            $product->save();
+        }
+        echo "thanh cong";
+
+     
+    }
+
     public function fill_name(){
 
         $ar_info[1] ='tivi';

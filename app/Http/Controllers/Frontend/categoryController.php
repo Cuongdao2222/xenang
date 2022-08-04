@@ -58,7 +58,6 @@ class categoryController extends Controller
                     array_push($new_property, strip_tags($values));
                 }
             }
-
         
             $list_data_group = filter::where('group_product_id', $group_id)->whereIn('id', $filter)->select('value')->get()->toArray();
 
@@ -135,6 +134,8 @@ class categoryController extends Controller
 
                     $number_product    = array_count_values($product);
 
+
+
                 
                     if(isset($number_product)){
                         $result_product = [];
@@ -146,10 +147,9 @@ class categoryController extends Controller
                         }
 
                         $product_search = product::whereIn('id', $result_product)->get();
-
                        
-                        
                     }
+
 
                    
                 }
