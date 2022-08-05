@@ -194,7 +194,7 @@
                 .phones-hide{
                     display: none !important;
                 }
-                
+
 
             }   
         </style>
@@ -322,7 +322,7 @@
                                             <ul class="dropdown-menu">
                                                 <li><a href="/xe-nang-dien">Xe nâng điện</a>
                                                 </li>
-                                                <li><a href="/xe-nang-dau">Xe nâng dầu</a>
+                                                <li><a href="/xe-nang-dau">Xe nâng dầu 1</a>
                                                 </li>
                                                 <li><a href="/xe-nang-tay">Xe nâng tay</a>
                                                 </li>
