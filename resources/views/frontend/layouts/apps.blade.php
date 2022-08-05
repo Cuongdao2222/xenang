@@ -324,39 +324,28 @@
                                         <li>
                                             <a href="/san-pham.html" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sản phẩm <span class="caret"></span></a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="/mercedes-a-class-c57.html">Xe nâng điện</a>
+                                                <li><a href="/xe-nang-dien">Xe nâng điện</a>
                                                 </li>
-                                                <li><a href="/mercedes-c-class-c58.html">Mercedes C Class</a>
+                                                <li><a href="/xe-nang-dau">Xe nâng dầu</a>
                                                 </li>
-                                                <li><a href="/mercedes-e-class-c60.html">Mercedes E Class</a>
+                                                <li><a href="/xe-nang-tay">Xe nâng tay</a>
                                                 </li>
-                                                <li><a href="/mercedes-s-class-c61.html">Mercedes S Class</a>
+                                                <li><a href="/xe-nang-thung-phuy">Xe nâng thùng phuy</a>
                                                 </li>
-                                                <li><a href="/xe-mercedes-c62.html">Xe Mercedes</a>
+                                                <li><a href="/xe-nang-mat-ban">xe nâng mặt bàn</a>
                                                 </li>
-                                                <li><a href="/mercedes-gla-c63.html">Mercedes GLA</a>
-                                                </li>
-                                                <li><a href="/mercedes-glc-c64.html">Mercedes GLC</a>
-                                                </li>
-                                                <li><a href="/mercedes-cla-c59.html">Mercedes CLA</a>
-                                                </li>
-                                                <li><a href="/mercedes-gle-c65.html">Mercedes GLE</a>
-                                                </li>
-                                                <li><a href="/mercedes-gls-c66.html">Mercedes GLS</a>
-                                                </li>
-                                                <li><a href="/glb-class-c67.html">Mercedes GLB</a>
-                                                </li>
+                                               
                                             </ul>
                                         </li>
-                                        <li><a href="/bang-gia-xe.html">Bảng giá xe</a>
+                                        <li><a href="#">Bảng giá xe</a>
                                         </li>
-                                        <li><a href="/tin-tuc-su-kien-l88.html">Tin tức sự kiện</a>
+                                        <li><a href="#">Tin tức sự kiện</a>
                                         </li>
-                                        <li><a href="/khuyen-mai-l89.html">Khuyến mãi</a>
+                                        <li><a href="#">Khuyến mãi</a>
                                         </li>
-                                        <li><a href="/bao-hiem-a19.html">Bảo hiểm</a>
+                                        <li><a href="#">Bảo hiểm</a>
                                         </li>
-                                        <li><a href="/lien-he.html">Liên hệ</a>
+                                        <li><a href="#">Liên hệ</a>
                                         </li>
                                     </ul>
                                     <!-- <ul class="nav navbar-nav">
