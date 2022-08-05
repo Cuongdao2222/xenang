@@ -208,7 +208,7 @@
         
             <?php 
 
-                $numbercart = Gloudemans\Shoppingcart\Facades\Cart::content()
+                $numbercart = Gloudemans\Shoppingcart\Facades\Cart::content();
             ?>
        
      
