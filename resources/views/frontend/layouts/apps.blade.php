@@ -195,12 +195,7 @@
                     display: none !important;
                 }
 
-            
-
-            }    
-
-
-           
+            }   
         </style>
     </head>
     <body>
