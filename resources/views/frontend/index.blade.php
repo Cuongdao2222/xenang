@@ -19,6 +19,7 @@
 
             .productshop ul{
                 display: flex;
+                
             }
 
             .nav-tabs .tab1{
