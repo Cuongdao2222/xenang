@@ -322,7 +322,7 @@
                                             <ul class="dropdown-menu">
                                                 <li><a href="/xe-nang-dien">Xe nâng điện</a>
                                                 </li>
-                                                <li><a href="/xe-nang-dau">Xe nâng dầu11</a>
+                                                <li><a href="/xe-nang-dau">Xe nâng dầu112</a>
                                                 </li>
                                                 <li><a href="/xe-nang-tay">Xe nâng tay</a>
                                                 </li>
