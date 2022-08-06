@@ -23,7 +23,7 @@
      @media screen and (max-width: 776px) {
 
         .container img{
-            width: 100% !important;
+           /* width: 100% !important;*/
             
             height: auto !important;
         }
