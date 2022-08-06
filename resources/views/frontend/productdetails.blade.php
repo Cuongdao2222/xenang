@@ -106,7 +106,7 @@
 <div class="container">
     
     <div class="box01">
-        <div class="box01__show col-md-6">
+        <div class="box01__show col-md-9">
             <div class="owl-carousel detail-slider" id="carousel">
 
                 @if($image->count()>0)
