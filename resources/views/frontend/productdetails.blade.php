@@ -26,6 +26,16 @@
              width: 100% !important;
         }
 
+        .item-img{
+            height: 320px;
+            width: auto;
+        }
+
+        .listproduct  .item-img img{
+            height: 100% !important;
+
+        }
+
 
         .container img{
            /* width: 100% !important;*/
