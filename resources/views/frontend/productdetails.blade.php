@@ -22,6 +22,11 @@
 
      @media screen and (max-width: 776px) {
 
+        .col-inner img{
+             width: 100% !important;
+        }
+
+
         .container img{
            /* width: 100% !important;*/
             
