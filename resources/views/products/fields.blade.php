@@ -14,7 +14,7 @@
 <div class="form-group col-sm-6">
     <?php 
 
-        $category = App\Models\category::select('id', 'namecategory')->Where('parent_id', 0)->get();
+        $category = App\Models\category::select('id', 'namecategory')->get();
 
         $new_category = [];
         if(isset($category)){
