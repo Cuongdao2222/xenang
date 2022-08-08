@@ -23,6 +23,13 @@
         margin-bottom: 10px;
     }
 
+    .pdetail-price-box{
+        margin-bottom: 15px;
+    }
+    .but-buy{
+        font-size: 23px;
+    }
+
      @media screen and (max-width: 776px) {
 
         .col-inner img{
@@ -41,11 +48,6 @@
         .price-show{
             margin-bottom: 15px;
         }
-
-        .pdetail-price-box{
-            margin-bottom: 15px;
-        }
-
 
         .container img{
            /* width: 100% !important;*/
@@ -124,6 +126,8 @@
         padding: 0;
     }
 
+
+
 </style>
 @endpush
 @if (\Session::has('msg'))
@@ -186,7 +190,11 @@
                     </div>
                 </div>
                 <div class="mb-10 fast-buy">
-                     <a href="{{ route('addcart') }}?id={{  $data->id }}"><button class="btn btn-danger buy"><span>Mua ngay</span></button></a>
+                     <a href="{{ route('addcart') }}?id={{  $data->id }}">
+                        <button class="btn btn-danger buy">
+                            <span class="but-buy">Mua ngay</span>
+                        </button>
+                    </a>
                 
                 </div>
                 
