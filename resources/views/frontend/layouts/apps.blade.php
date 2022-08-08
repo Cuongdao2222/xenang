@@ -96,7 +96,15 @@
 
                 font-size: 20px;
                 color: #fff;
-            }  
+            } 
+
+            .phone-left{
+                display: flex;
+            }
+
+            .icon-phone{
+                line-height: 64px;
+            }
 
             @media screen and (min-width: 777px) {
 
@@ -142,12 +150,21 @@
 
                 .mobile-phone{
                     position: absolute;
-                    bottom: 10%;
+                    bottom: -24%;
                 }
                 .mobile-phone i{
                     color: #fff;
-                    font-size: 20px;
+                    font-size: 38px;
+                    margin-right: 10px;
                 }
+
+                .logotop .header__cart {
+                    font-size: 13px;
+                } 
+
+                .phone-left .div-text{
+                    text-align: left;
+                }  
             }    
 
             @media screen and (max-width: 776px) {
@@ -237,30 +254,36 @@
 
                             </div>
 
-                            <div class="heading-title  search-pc col-4">
-                                <form action="/tim-kiem.html">
-                                <div class="input-group">
-                                    <input type="text" id="txtkeyword" class="form-control" name="txtkeyword" placeholder="Từ khóa tìm kiếm...">
-                                    <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
-                                    </span>
-                                </div>
-                                <!-- /input-group -->
-                            </form>
 
-                            </div>
                             <div class="heading-title heading-titles col-3">
 
                                 <div class="mobile-phone">
-                                    <i class="fa fa-phone" aria-hidden="true"></i>
-                               
-                                    <a href="tel:0904 106 608" class="header_phone">
-                                       096 7326622                       
-                                    </a>   
+                                    <a href="tel: 02473036336" class="header__cart fas-phones phone-left">
+                                        <div class="icon-phone">
+                                             <i class="fa fa-phone phones-customn" aria-hidden="true"></i>
+                                        </div>
+                                         <div class="div-text">
 
+                                            <span class="tel-head">096 7326622</span>
+                                            <br>
+                                            <span class="tvbhclient">Tư vấn bán hàng</span>
+                                        </div>
+                                    </a>  
                                 </div>
-                            
                             </div>
+
+                            <div class="heading-title  search-pc col-4">
+                                <form action="/tim-kiem.html">
+                                    <div class="input-group">
+                                        <input type="text" id="txtkeyword" class="form-control" name="txtkeyword" placeholder="Từ khóa tìm kiếm...">
+                                        <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+                                        </span>
+                                    </div>
+                                    <!-- /input-group -->
+                                </form>
+                            </div>
+                            
 
 
                             <!-- <div class=" col-md-3 hotline_text phones-text ">

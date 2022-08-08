@@ -42,7 +42,15 @@
             
             height: auto !important;
         }
-    }    
+    } 
+
+    @media screen and (min-width: 776px) {
+        .image-silde{
+            width: 55% !important;
+            margin: 0 auto;
+        } 
+    }
+   
 </style>
 
 @push('style')
@@ -92,9 +100,6 @@
         padding: 0;
     }
 
-    
-    
-
 </style>
 @endpush
 @if (\Session::has('msg'))
@@ -103,17 +108,35 @@
             </script>
         @endif
 
+<style type="text/css">
+    .box01__show
+</style>   
+    
+
 <div class="container">
+
+    <ul class="breadcrumb">
+        
+        <li>
+            <a href="{{ route('homeFe') }}">Trang chủ</a>
+            <meta property="position" content="1">
+        </li>
+        <li>
+            <a href="{{ route('product-details', $data->link) }}">{{ $data->name }}</a>
+            <meta property="position" content="2">
+        </li>
+
+    </ul>
     
     <div class="box01">
-        <div class="box01__show col-md-9">
+        <div class="box01__show col-md-7">
             <div class="owl-carousel detail-slider" id="carousel">
 
                 @if($image->count()>0)
                 @foreach($image as $images)
 
                <div class="item">
-                    <a href="{{ asset($images->image) }}" data-fancybox="gallery"><img src="{{ asset($images->image) }}" data-src="{{ asset($images->image) }}" class=" ls-is-cached lazyloaded" alt="Smart tivi LG 43LM5750PTC 43 inch Full HD"></a>
+                    <a href="{{ asset($images->image) }}" data-fancybox="gallery"><img src="{{ asset($images->image) }}" data-src="{{ asset($images->image) }}" class=" ls-is-cached lazyloaded image-silde" alt="Smart tivi LG 43LM5750PTC 43 inch Full HD"></a>
                     
                 </div>
                 @endforeach
@@ -123,7 +146,7 @@
             </div>
         </div>
 
-        <div class="col-md-3 ">
+        <div class="col-md-5 ">
             <div class="col-xs-12 col-sm-12 col-left">
                 <div class="main">
                     <div class="_box widget_box">
@@ -276,11 +299,6 @@
         </div>
         @endif
         </div>
-        
-        
-    
-
-
 
 </div>
 @push('js')
