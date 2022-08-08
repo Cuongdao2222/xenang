@@ -19,6 +19,9 @@
         line-height: 21px;
         margin-bottom: 15px;
     }
+    .fast-buy{
+        margin-bottom: 10px;
+    }
 
      @media screen and (max-width: 776px) {
 
@@ -35,12 +38,25 @@
             height: 100% !important;
 
         }
+        .price-show{
+            margin-bottom: 15px;
+        }
+
+        .pdetail-price-box{
+            margin-bottom: 15px;
+        }
 
 
         .container img{
            /* width: 100% !important;*/
             
             height: auto !important;
+        }
+        .box-content{
+            text-align: center;
+        }
+        .buy{
+            width: 40%;
         }
     } 
 
@@ -49,6 +65,14 @@
             width: 55% !important;
             margin: 0 auto;
         } 
+
+        .dtct{
+            text-align: center;
+        }
+
+        .buy{
+            width: 20%;
+        }
     }
    
 </style>
@@ -129,7 +153,7 @@
     </ul>
     
     <div class="box01">
-        <div class="box01__show col-md-7">
+        <div class="box01__show col-md-7 box-content">
             <div class="owl-carousel detail-slider" id="carousel">
 
                 @if($image->count()>0)
@@ -148,6 +172,37 @@
             <div style="text-align: center;">
                 <a id="show-popup-featured-images-gallery" style="display: block" href="javascript:void(0)" data-color-id="0" data-toggle="modal" data-target="#Salient_Features">Xem tất cả điểm nổi bật</a>
             </div>
+
+            <br>
+
+            <div class="gia dtct">
+                 <div id="giachitiet">
+                   
+                    <div class="pdetail-price-box">
+
+                        <h3>
+                            <span class="nhan">Giá:</span> {{ str_replace(',' ,'.', number_format($data->price)) }}đ
+                        </h3>
+                    </div>
+                </div>
+                <div class="mb-10 fast-buy">
+                     <a href="{{ route('addcart') }}?id={{  $data->id }}"><button class="btn btn-danger buy"><span>Mua ngay</span></button></a>
+                
+                </div>
+                
+
+
+                <div class="price-show">
+                
+                    <a rel="noopener noreferrer btn-danger" href="{{ route('addcarts') }}?id={{  $data->id }}"  class="button primary lowercase">
+
+                        <button class="btn btn-danger buy"><span>Thêm Giỏ hàng</span></button>
+                            
+                    </a> 
+                </div>
+            </div>
+
+            
         </div>
 
         <div class="col-md-5 ">
@@ -183,33 +238,6 @@
                         </div>
                     </div>
 
-                    <div class="gia dtct">
-                         <p class="gia dtct" id="giachitiet">
-                            <span class="nhan">Giá:</span> 
-                            <div class="pdetail-price-box">
-
-                                <h3>
-                                     {{ str_replace(',' ,'.', number_format($data->price)) }}đ
-                                </h3>
-                            </div>
-                        </p>
-
-                        <a href="{{ route('addcart') }}?id={{  $data->id }}"><button class="btn btn-danger buy" style="width: 100%;"><span>Mua ngay</span></button></a>
-
-                        
-                    </div>
-
-                    <br>
-
-                    <div>
-                        
-                        <a rel="noopener noreferrer btn-danger" href="{{ route('addcarts') }}?id={{  $data->id }}"  class="button primary lowercase">
-
-                            <button class="btn btn-danger buy" style="width: 100%;"><span>Thêm Giỏ hàng</span></button>
-                                
-                        </a> 
-                    </div>
-
                 </div>
                 
                 <!-- <div class="_box agent_box affix-top">
@@ -223,15 +251,12 @@
     </div>
 
     <div class="clearfix"></div>
-    
-
-   
-
   
 </div>
 
 <div class="row align-middle align-center" id="row-737035537">
     <div class="container" style="padding:15px">
+
         <div id="col-389293124" class="col medium-6 small-12 large-6" data-animate="fadeInLeft" data-animated="true">
             <div class="col-inner">
 
