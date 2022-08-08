@@ -144,6 +144,10 @@
 
               
             </div>
+            <br>
+            <div style="text-align: center;">
+                <a href="#">Xem tất cả điểm nổi bật</a>
+            </div>
         </div>
 
         <div class="col-md-5 ">
