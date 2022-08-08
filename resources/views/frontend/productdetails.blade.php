@@ -262,7 +262,7 @@
   
 </div>
 
-<div class="row align-middle align-center" id="row-737035537">
+<div class="align-middle align-center" id="row-737035537">
     <div class="container" style="padding:15px">
 
         <div id="col-389293124" class="col medium-6 small-12 large-6" data-animate="fadeInLeft" data-animated="true">
