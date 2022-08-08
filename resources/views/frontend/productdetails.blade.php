@@ -146,7 +146,7 @@
             </div>
             <br>
             <div style="text-align: center;">
-                <a href="#">Xem tất cả điểm nổi bật</a>
+                <a id="show-popup-featured-images-gallery" style="display: block" href="javascript:void(0)" data-color-id="0" data-toggle="modal" data-target="#Salient_Features">Xem tất cả điểm nổi bật</a>
             </div>
         </div>
 
@@ -304,6 +304,25 @@
         @endif
         </div>
 
+</div>
+
+
+<div class="modal fade" id="Salient_Features" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Đặc điểm nổi bật</h5>
+            </div>
+            <div class="modal-body" style="padding:0 15px">
+                <div class="special-detail">
+                    {!!  @$data->salient_features  !!}
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
 </div>
 @push('js')
 <script type="text/javascript">
