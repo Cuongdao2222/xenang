@@ -29,6 +29,9 @@
     .but-buy{
         font-size: 23px;
     }
+    .col-inner ul {
+        text-align: justify !important;
+    }
 
      @media screen and (max-width: 776px) {
 
