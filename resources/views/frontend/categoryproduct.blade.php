@@ -11,7 +11,7 @@
             <div id="tab0" class="tab-pane fade in active">
 
                 <?php 
-                    $products1 = App\Models\products::where('category', 1)->take(12)->get();
+                    $products1 = App\Models\products::where('category', 1)->take(8)->get();
 
                 ?>
                 @foreach($products1 as $val)
