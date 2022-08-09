@@ -14,7 +14,7 @@
                     $products1 = App\Models\products::where('category', 1)->take(12)->get();
 
                 ?>
-                @foreach($products1 as $value)
+                @foreach($products1 as $val)
                
                 <div class="col-xs-6 col-sm-6 col-md-3">
                     <div class="infobox wow bounceIn">
