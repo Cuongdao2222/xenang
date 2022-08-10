@@ -50,12 +50,13 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script type="text/javascript" language="javascript" src="{{ asset('css/css/bxslider/jquery.bxslider.min.js')}}"></script>
         <link type="text/css" rel="stylesheet" href="{{ asset('css/css/bxslider/jquery.bxslider.css')}}">
+        <script type="text/javascript" src="{{ asset('css/js/jquery.marquee.min.js')}}"></script>
         <!-- animate -->
         <link type="text/css" rel="stylesheet" href="{{ asset('css/animate/animate.css')}}">
         <script type="text/javascript" language="javascript" src="{{ asset('css/animate/wow.min.js')}}"></script>
         <script type="text/javascript" language="javascript" src="{{ asset('css/js/jquery.smoothwheel.js')}}"></script>
         <link href="{{ asset('css/style.css')}}" rel="stylesheet">
-       <!--  <script type="text/javascript" language="javascript" src="{{ asset('css/js/site.js')}}"></script>
+        <script type="text/javascript" language="javascript" src="{{ asset('css/js/site.js')}}"></script>
 
         
         <script type="text/javascript">
@@ -73,7 +74,7 @@
                 }
             
             });
-        </script> -->
+        </script>
 
         
         <style type="text/css">
@@ -589,9 +590,6 @@
         </footer>
     </body>
 </html>
-
-
-<script type="text/javascript" src="{{ asset('css/js/jquery.marquee.min.js')}}"></script>
 
  <script src="{{ asset('css/owlcarousel/owl.carousel.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('css/fancybox/jquery.fancybox.min.js')}}"></script>
