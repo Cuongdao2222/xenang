@@ -152,6 +152,7 @@
                 .mobile-phone{
                     position: absolute;
                     bottom: -24%;
+                    left: 36%;
                 }
                 .mobile-phone i{
                     color: #fff;
@@ -165,7 +166,12 @@
 
                 .phone-left .div-text{
                     text-align: left;
-                }  
+                } 
+
+                .address{
+                  
+                    left: 14%;
+                }
             }    
 
             @media screen and (max-width: 776px) {
@@ -259,6 +265,20 @@
                             <div class="heading-title heading-titles col-3">
 
                                 <div class="mobile-phone">
+                                    <a href="#" class="header__cart fas-phones phone-left">
+                                        <div class="icon-phone">
+                                             <i class="fa fa-map-marker phones-customn" aria-hidden="true"></i>
+                                        </div>
+                                         <div class="div-text">
+
+                                            <span class="tel-head"></span>
+                                            <br>
+                                            <span class="tvbhclient">Xem bãi xe</span>
+                                        </div>
+                                    </a>  
+                                </div>
+
+                                 <div class="mobile-phone address">
                                     <a href="tel: 02473036336" class="header__cart fas-phones phone-left">
                                         <div class="icon-phone">
                                              <i class="fa fa-phone phones-customn" aria-hidden="true"></i>
@@ -271,6 +291,8 @@
                                         </div>
                                     </a>  
                                 </div>
+
+
                             </div>
 
                             <div class="heading-title  search-pc col-4">

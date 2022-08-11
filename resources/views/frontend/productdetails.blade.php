@@ -33,6 +33,65 @@
         text-align: justify !important;
     }
 
+    /*button tab*/
+
+    .box01__tab {
+        font-size: 0;
+        text-align: center;
+    }
+
+    .box01__tab .item {
+        cursor: pointer;
+        display: inline-block;
+        margin-right: 10px;
+        text-align: center;
+        vertical-align: top;
+        width: 55px;
+    }
+
+    .box01__tab .item-border {
+        align-items: center;
+        border: 1px solid #e0e0e0;
+        border-radius: 2px;
+        display: flex;
+        justify-content: center;
+        min-height: 55px;
+        padding: 4px;
+    }
+
+    .box01__tab .item.active .item-border {
+        border-color: #fb6e2e;
+    }
+
+    .icondetail-noibat {
+        background-position: 0 0;
+        height: 28px;
+        width: 28px;
+    }
+
+    [class ^="icondetail-"], [class *="icondetail-"] {
+        background-image: url({{ asset('css/icon-chitiet.png')  }});
+        background-repeat: no-repeat;
+        display: inline-block;
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+        vertical-align: middle;
+        background-size: 300px 180px;
+    }
+    .icondetail-thongso {
+        background-position: -105px 0;
+        height: 30px;
+        width: 30px;
+    }
+
+    .icondetail-danhgia {
+        background-position: -140px 0;
+        height: 24px;
+        width: 23px;
+    }
+
+
      @media screen and (max-width: 776px) {
 
         .col-inner img{
@@ -128,9 +187,6 @@
     .container{
         padding: 0;
     }
-
-
-
 </style>
 @endpush
 @if (\Session::has('msg'))
@@ -176,8 +232,36 @@
               
             </div>
             <br>
-            <div style="text-align: center;">
+            <div style="text-align: center; margin-bottom:15px;">
                 <a id="show-popup-featured-images-gallery" style="display: block" href="javascript:void(0)" data-color-id="0" data-toggle="modal" data-target="#Salient_Features">Xem tất cả điểm nổi bật</a>
+            </div>
+
+            <div class="scrolling_inner">
+                <div class="box01__tab scrolling">
+                    <div id="thumb-featured-images-gallery-0" class="item itemTab active " data-gallery-id="featured-images-gallery" data-color-id="0" data-is-full-spec="False" data-color-order-id="0" data-isfeatureimage="True" data-toggle="modal" data-target="#Salient_Features">
+                        <div class="item-border">
+                            <i class="icondetail-noibat"></i>
+                        </div>
+                        <p>Điểm nổi bật</p>
+                    </div>
+                    <div id="thumb-specification-gallery-0" class="item itemTab  is-show-popup" data-gallery-id="specification-gallery" data-color-id="0" data-is-full-spec="True" data-color-order-id="0" data-isfeatureimage="True">
+                        <div class="item-border">
+                            <i class="icondetail-thongso" data-toggle="modal" data-target="#specifications"></i>
+                        </div>
+                        <p data-toggle="modal" data-target="#specifications">Thông số kỹ thuật</p>
+                    </div>
+
+                   <!--  <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                        </div> -->
+
+                    <div id="thumb-article-gallery-0" class="item itemTab  is-show-popup" data-gallery-id="article-gallery" data-color-id="0" data-is-full-spec="False" data-color-order-id="0" data-isfeatureimage="True">
+                        <div class="item-border">
+                            <i class="icondetail-danhgia"></i>
+                        </div>
+                        <p>Thông tin sản phẩm</p>
+                    </div>
+                </div>
             </div>
 
             <br>
