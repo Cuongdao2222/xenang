@@ -46,6 +46,29 @@ class crawlController extends Controller
 
     }
 
+    public function uploadImageProduct()
+    {
+
+        $id = 27;
+
+        $image = product::find($id);
+
+        $direct = '/uploads/product/';
+
+        $img  = basename($image);
+
+        $newDirect = $direct.$img;
+
+        file_put_contents(public_path().$newDirect, file_get_contents(trim($image->images)));
+
+        $image->image = $newDirect;
+
+        $image->save();
+
+        echo "thanh cong";
+
+    }
+
 
     public function crawl_link()
     {
