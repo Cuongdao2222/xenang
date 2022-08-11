@@ -29,7 +29,7 @@ class productsController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $products = $this->productsRepository->paginate(10);
+        $products = $this->productsRepository->allQuery()->orderBy('id','desc')->paginate(10);
 
         return view('products.index')
             ->with('products', $products);
