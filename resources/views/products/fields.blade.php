@@ -36,10 +36,16 @@
     {!! Form::textarea('content', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Content Field -->
+<!-- salient_features Field -->
 <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('Đặc điểm nổi bật', 'Đặc điểm nổi bật:') !!}
     {!! Form::textarea('salient_features', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Specifications Field -->
+<div class="form-group col-sm-12 col-lg-12">
+    {!! Form::label('Thông số kỹ thuật', 'Thông số kỹ thuật:') !!}
+    {!! Form::textarea('specifications', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Images Field -->
@@ -98,6 +104,15 @@
     } );
 
      CKEDITOR.replace( 'salient_features', {
+        filebrowserBrowseUrl: '{{ $url_domain }}/ckfinder.html',
+        filebrowserImageBrowseUrl: '{{ $url_domain }}/ckfinder.html?Type=Images',
+        filebrowserUploadUrl: '{{ $url_domain }}/js/core/connector/php/connector.php?command=QuickUpload&type=Files',
+        filebrowserImageUploadUrl: '{{ $url_domain }}/js/core/connector/php/connector.php?command=QuickUpload&type=Images',
+        filebrowserWindowWidth : '1000',
+        filebrowserWindowHeight : '700'
+    } );
+
+      CKEDITOR.replace('specifications', {
         filebrowserBrowseUrl: '{{ $url_domain }}/ckfinder.html',
         filebrowserImageBrowseUrl: '{{ $url_domain }}/ckfinder.html?Type=Images',
         filebrowserUploadUrl: '{{ $url_domain }}/js/core/connector/php/connector.php?command=QuickUpload&type=Files',

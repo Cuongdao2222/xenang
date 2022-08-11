@@ -32,6 +32,7 @@ class products extends Model
         'images',
         'quatity',
         'link',
+        'specifications',
         'salient_features',
     ];
 
