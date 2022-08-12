@@ -91,6 +91,13 @@
         width: 23px;
     }
 
+    .box01__tab .item p {
+        font-size: 12px;
+        line-height: 1.3;
+        margin-top: 5px;
+        white-space: normal;
+    }
+
 
      @media screen and (max-width: 776px) {
 
