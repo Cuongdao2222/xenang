@@ -55,13 +55,14 @@ class crawlController extends Controller
 
         $direct = '/uploads/product/';
 
-        $img  = basename($image);
+        $img  = basename($image->images);
 
         $newDirect = $direct.$img;
 
+
         file_put_contents(public_path().$newDirect, file_get_contents(trim($image->images)));
 
-        $image->image = $newDirect;
+        $image->images = $newDirect;
 
         $image->save();
 

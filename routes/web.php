@@ -20,6 +20,8 @@
 
 Route::get('/', 'Frontend\indexController@index')->name('homeFe');
 
+Route::get('test', 'crawlController@uploadImageProduct');
+
 
 Auth::routes(['verify' => true]);
 
