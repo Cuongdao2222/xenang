@@ -29,7 +29,16 @@ class productsController extends AppBaseController
      */
     public function index(Request $request)
     {
+
+        $category = @$_GET['category'];
+
         $products = $this->productsRepository->allQuery()->orderBy('id','desc')->paginate(10);
+
+        if(!empty($category)){
+
+            $products = $this->productsRepository->allQuery()->where('category', $category)->paginate(10);
+
+        }
 
         return view('products.index')
             ->with('products', $products);
