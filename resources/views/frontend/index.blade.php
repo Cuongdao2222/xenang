@@ -11,6 +11,9 @@
 
         
 */
+    header {
+        height: 155px;
+    }
         @media screen and (max-width: 776px) {
 
             #aboutus .aboutmore {
@@ -51,6 +54,12 @@
 </style>
 <section id="wrapper">
     <section id="slide">
+
+        <?php 
+
+            $banner = DB::table('banners')->get();
+        ?>
+        @if($banner->count()>0)
         <div id="carousel-slide" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -59,12 +68,13 @@
             </ol>
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <a href="#"><img src="https://xenangdienkomatsu.vn/Content/images/banner/1.jpg?w=1900&h=400&mode=crop" alt="Slide 1"></a>
+
+                @foreach($banner as $key => $banners)
+                <div class="item {{  $key == 0?'active':'' }} ">
+                    <a href="#"><img src="{{ asset($banners->image) }}" alt="Slide"></a>
                 </div>
-                <div class="item ">
-                    <a href="#"><img src="https://xenangdienkomatsu.vn/Content/images/Banner-Cuoi.jpg" alt="Slide 2"></a>
-                </div>
+                @endforeach
+                
             </div>
             <!-- Controls -->
             <a class="left carousel-control" href="#carousel-slide" role="button" data-slide="prev">
@@ -76,6 +86,7 @@
             <span class="sr-only">Next</span>
             </a>
         </div>
+        @endif
     </section>
     <section id="aboutus">
         <div class="titleabout">

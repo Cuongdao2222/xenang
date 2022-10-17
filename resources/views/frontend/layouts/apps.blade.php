@@ -236,11 +236,11 @@
             <div class="logotop">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-4 logo-img">
+                        <!-- <div class="col-xs-12 col-sm-6 col-md-4 logo-img">
                             <a href="index.htm">
                             <img src="{{ asset('images/contact/6892logo.png')}}" alt="MERCEDES BENZ ">
                             </a>
-                        </div>
+                        </div> -->
                         <div class="col-xs-12 col-sm-6 col-md-12 site-heading">
 
                             <div class="col-3 icons-heads icons-1">
@@ -296,11 +296,11 @@
                             </div>
 
                             <div class="heading-title  search-pc col-4">
-                                <form action="/tim-kiem.html">
+                                <form  method="get" action="{{ route('search') }}">
                                     <div class="input-group">
-                                        <input type="text" id="txtkeyword" class="form-control" name="txtkeyword" placeholder="Từ khóa tìm kiếm...">
+                                        <input type="text" id="txtkeyword" class="form-control" name="key" placeholder="Từ khóa tìm kiếm...">
                                         <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+                                        <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
                                         </span>
                                     </div>
                                     <!-- /input-group -->

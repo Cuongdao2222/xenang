@@ -68,6 +68,8 @@ Route::group(['prefix' => 'admins','middleware' => 'auth'], function() {
 
 Route::get('/lien-he', 'Frontend\blogController@lienhe')->name('lien-he');
 
+Route::get('/search', 'Frontend\indexController@searchByInput')->name('search');
+
 
 Route::get('/crawllink', 'crawlController@updateContent');
 
