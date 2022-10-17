@@ -32,7 +32,7 @@ class imageController extends AppBaseController
 
         $pid = $_GET['pid']??1;
 
-        $images = $this->imageRepository->allQuery()->where('product_id', $pid)->paginate(10);
+        $images = $this->imageRepository->allQuery()->where('product_id', $pid)->orderBy('id', 'desc')->paginate(10);
 
         return view('images.index')->with('images', $images);
               
@@ -82,9 +82,7 @@ class imageController extends AppBaseController
                 $image = $this->imageRepository->create($input);
             }
 
-            Flash::success('Image saved successfully.');
-
-            return redirect()->back();
+           return redirect(route('images.index').'?pid='.$input['product_id']);
             
         }
 
