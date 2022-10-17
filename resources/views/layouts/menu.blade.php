@@ -8,14 +8,52 @@
 </style>
 
 
-
-
 <li class="nav-item">
-    <a href="{{ route('categories.index') }}"
+    <a href="{{ route('banners.index') }}"
        class="nav-link ">
-        <p>Danh mục</p>
+        <p>Banner </p>
     </a>
 </li>
+
+<li class="nav-item" style="display: flex; height:44px;"  >
+
+   
+
+    <a href="#"
+       class="nav-link {{ Request::is('groupProducts*') ? 'active' : '' }}" style="width: 68%;">
+        <p>Nhóm sản phẩm</p>
+        
+    </a>
+
+    <?php
+        $listGroup = DB::table('categories')->select('namecategory','id')->get();
+
+    ?>
+
+    @if(count($listGroup)>0)
+     <span class="btn btn-link open" style="width: 12%;">+</span>
+     @endif 
+    
+    
+</li>
+
+
+<ul style="width: 68%;">
+    @if(count($listGroup)>0)
+    @foreach($listGroup as $value)
+    <li class="child-nav">
+        <a href="{{ route('products.index') }}?category={{ $value->id }}"
+           class="nav-link">
+            <p>{{ $value->namecategory }}</p>
+        </a>
+    </li>
+    @endforeach
+
+    
+    @endif
+
+   
+</ul>
 
 <li class="nav-item">
     <a href="{{ route('posts.index') }}"
@@ -23,6 +61,8 @@
         <p>Bài viết </p>
     </a>
 </li>
+
+
 
 <li class="nav-item">
     <a href="{{ route('products.index') }}"

@@ -1,3 +1,17 @@
+<?php 
+    $option[0] = ['name'=>'Banner slide home', 'size'=>'1920px - 564px'];
+?>
+<?php  
+    $optionss = $_GET['option']??'';
+
+    $i =0 ;
+?>
+<select name="option" onchange="location = this.value;">
+    @foreach($option as $key => $options)
+    <option value="{{ route('banners.index') }}?option={{ $key }}" {{ $key == $optionss?'selected':''  }}>{{ $options['name'] }} ({{ $options['size'] }})  </option>
+    @endforeach
+</select>
+
 <div class="table-responsive">
     <table class="table" id="banners-table">
         <thead>
@@ -9,6 +23,8 @@
         </tr>
         </thead>
         <tbody>
+
+
         @foreach($banners as $banner)
             <tr>
                 <td><img src="/{{ $banner->image }}" width="150px" height="150px"></td>

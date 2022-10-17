@@ -44,7 +44,7 @@ Route::group(['prefix' => 'admins','middleware' => 'auth'], function() {
     })->name('lienhead');
 
 
-
+    Route::resource('banners', 'bannerController');
 
     Route::get('generator_builder', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@builder')->name('io_generator_builder');
 
@@ -95,6 +95,8 @@ Route::get('bai-viet/{slug}', 'Frontend\blogController@detail')->name('details')
 Route::get('imagescontent/{id}', 'productController@imagecontent')->name('imagescontent');
 
 Route::get('san-pham/{slug}', 'Frontend\blogController@productDetails')->name('product-details');
+
+
 
 
 
