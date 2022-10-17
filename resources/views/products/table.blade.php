@@ -26,6 +26,8 @@
                 <td width="120">
                     {!! Form::open(['route' => ['products.destroy', $products->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
+
+                        <a href="{{ route('images.index') }}?pid={{ $products->id }}" class="btn btn-default btn-xs hover-image"><i class="fas fa-image"></i></a>
                         <a href="{{ route('products.show', [$products->id]) }}"
                            class='btn btn-default btn-xs'>  
                             <i class="far fa-eye"></i>

@@ -26,4 +26,4 @@
     {!! Form::text('product_id', $product_id, ['class' => 'form-control']) !!}
 </div>
 
-
+<input type="hidden" name="product_id" value="{{ $_GET['pid']??'' }}">

@@ -29,11 +29,17 @@ class imageController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $images = $this->imageRepository->paginate(10);
 
-        return view('images.index')
-            ->with('images', $images);
+        $pid = $_GET['pid']??1;
+
+        $images = $this->imageRepository->allQuery()->where('product_id', $pid)->paginate(10);
+
+        return view('images.index')->with('images', $images);
+              
     }
+
+
+       
 
     /**
      * Show the form for creating a new image.
@@ -66,6 +72,8 @@ class imageController extends AppBaseController
                 $filePath = $value->storeAs('uploads/product', $name, 'public');
 
                 $input['image'] = $filePath;
+
+                $input['product_id'] = 1;
 
                 $input['link'] = $filePath;
 

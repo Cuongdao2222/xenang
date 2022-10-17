@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+    <?php 
+        $pid = $_GET['pid'];
+    ?>
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -9,7 +12,7 @@
                 </div>
                 <div class="col-sm-6">
                     <a class="btn btn-primary float-right"
-                       href="{{ route('images.create') }}">
+                       href="{{ route('images.create') }}?pid={{ $pid }}">
                         Add New
                     </a>
                 </div>

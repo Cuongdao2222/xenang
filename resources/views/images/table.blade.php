@@ -3,7 +3,7 @@
         <thead>
         <tr>
             <th>Image</th>
-        <th>Link</th>
+        
         <th>Product Id</th>
             <th colspan="3">Action</th>
         </tr>
@@ -11,8 +11,8 @@
         <tbody>
         @foreach($images as $image)
             <tr>
-                <td>{{ $image->image }}</td>
-            <td>{{ $image->link }}</td>
+                <td><img src="{{ $image->image }}"></td>
+            
             <td>{{ $image->product_id }}</td>
                 <td width="120">
                     {!! Form::open(['route' => ['images.destroy', $image->id], 'method' => 'delete']) !!}
