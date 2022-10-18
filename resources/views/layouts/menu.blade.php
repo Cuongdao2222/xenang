@@ -38,6 +38,25 @@
 </li>
 
 
+@if(Auth::user()->permision == 3)
+
+<li class="nav-item">
+    <a href="{{ route('view-user') }}"
+       class="nav-link ">
+        <p>Quản trị người dùng</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="{{ route('register-user') }}"
+       class="nav-link {{ Request::is('products*') ? 'active' : '' }}">
+        <p>Đăng ký user</p>
+    </a>
+</li>
+
+@endif
+
+
 <ul style="width: 68%;">
     @if(count($listGroup)>0)
     @foreach($listGroup as $value)

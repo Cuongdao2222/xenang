@@ -1,3 +1,8 @@
+
+<div class="col-md-12">
+     <button>Seo</button><br>
+</div>
+
 <!-- Name Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('name', 'Name:') !!}

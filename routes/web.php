@@ -13,11 +13,6 @@
 
 
 
-
-
-
-
-
 Route::get('/', 'Frontend\indexController@index')->name('homeFe');
 
 Route::get('test', 'crawlController@uploadImageProduct');
@@ -31,17 +26,27 @@ Route::group(['prefix' => 'admins','middleware' => 'auth'], function() {
 
     Route::resource('categories', 'categoryController');
 
+    Route::get('/register','customnUserController@registerUser')->name('register-user');
+
+    Route::get('view-user', 'customnUserController@viewUser')->name('view-user');
+
     Route::get('home', 'HomeController@index')->name('home-admin');
 
     Route::get('/order-list/{id}', 'Frontend\orderController@orderListView')->name('order_list_view');
 
     Route::get('add-active-post', 'postController@addActive')->name('add-active-post');
 
+    Route::post('/addUser', 'customnUserController@addUser')->name('adduser');
+
     Route::get('add-hight-light-post', 'postController@addHightLight')->name('add-hight-light-post');
 
     Route::get('lienhe',function(){
         return view('lienhe');
     })->name('lienhead');
+
+    Route::post('check-active', 'AjaxController@checkActive')->name('check-active');
+
+    Route::resource('metaSeos', 'metaSeoController');
 
 
     Route::resource('banners', 'bannerController');
