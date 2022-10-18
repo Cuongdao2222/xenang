@@ -19,7 +19,7 @@
 
    
 
-    <a href="#"
+    <a href="{{ route('categories.index') }}"
        class="nav-link {{ Request::is('groupProducts*') ? 'active' : '' }}" style="width: 68%;">
         <p>Nhóm sản phẩm</p>
         
