@@ -1,6 +1,19 @@
 
 <?php  $url_domain =  Config::get('app.url') ?>
 
+<?php 
+    $metaSeo = App\Models\metaSeo::find($post->Meta_id); 
+
+   
+
+ ?>
+
+@if(!empty($metaSeo))
+<div class="col-md-12">
+     <button><a href="{{  route('metaSeos.edit', $metaSeo->id)  }}">Seo</a></button><br>
+</div>
+@endif
+
 <div class="col-md-12 draft-article" >
     <button type="button" class="btn btn-info article-but" onclick="setDataForm()">Bài viết nháp</button>
 </div>
