@@ -25,7 +25,7 @@ class metaSeo extends Model
         'meta_content',
         'meta_og_title',
         'meta_og_content',
-        'meta_keywords'
+        'meta_key_words'
     ];
 
     /**

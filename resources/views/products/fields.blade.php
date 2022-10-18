@@ -1,7 +1,18 @@
+<?php 
+    $metaSeo = App\Models\metaSeo::find($products->Meta_id); 
 
+   
+
+ ?>
+
+@if(!empty($metaSeo))
 <div class="col-md-12">
-     <button>Seo</button><br>
+     <button><a href="{{  route('metaSeos.edit', $metaSeo->id)  }}">Seo</a></button><br>
 </div>
+@endif
+
+ 
+
 
 <!-- Name Field -->
 <div class="form-group col-sm-6">

@@ -233,6 +233,7 @@ class productController extends AppBaseController
      */
     public function edit($id)
     {
+       
         $product = $this->productRepository->find($id);
 
         if (empty($product)) {
