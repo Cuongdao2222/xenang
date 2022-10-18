@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\banners;
 
-use App\Models\Product;
+use App\Models\product;
 
 
 
@@ -46,7 +46,7 @@ class indexController extends Controller
 
         $resultProduct = [];
 
-        $find_first = Product::select('id')->where('name','LIKE', '%'. $data .'%')->OrWhere('product_sku', 'LIKE', '%' . $data . '%')->get()->pluck('id');
+        $find_first = product::select('id')->where('name','LIKE', '%'. $data .'%')->OrWhere('product_sku', 'LIKE', '%' . $data . '%')->get()->pluck('id');
 
         if(isset($find_first)){
 
@@ -61,7 +61,7 @@ class indexController extends Controller
 
         if(isset($resultProduct)){
 
-            $products = Product::whereIn('id', $resultProduct)->paginate(10);
+            $products = product::whereIn('id', $resultProduct)->paginate(10);
 
              return view('frontend.search')
             ->with('datas', $products);
