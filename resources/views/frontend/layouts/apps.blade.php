@@ -7,18 +7,26 @@
         <meta name="geo.placename" content="Hải Ph&ograve;ng">
         <meta name="geo.position" content="20.844912;106.688084">
         <meta name="ICBM" content="20.844912, 106.688084">
-        <title>Chuyên xe nâng</title>
-    <!--     <meta name="keywords" content="mercedes, mercedes benz, mercedes hai phong, mercedes ha noi, mercedes gia tot,"> -->
-        <meta name="description" content="Chúng tôi cam kết mức giá tốt nhất - dịch vụ hoàn hảo tới Khách hàng">
-        <link rel="alternate" href="index.htm" hreflang="vi-vn">
-        <!-- Removed by WebCopy --><!--<base href="https://mercedesbenz-hanoi.net/" target="_self">--><!-- Removed by WebCopy -->
+
+        @if(isset($meta))
+
+        <title>{{ $meta->meta_title }}</title>
+        <meta name="description" content="{{ $meta->meta_content }}"/>
+        <meta property="og:title" content="{{ $meta->meta_title }}" />
+        
+
+        <meta property="og:description" content="{{ $meta->meta_content }}" /> 
+        <meta name="keywords" content="{{ $meta->meta_key_words??'sieu thi dien may, siêu thị điện máy, mua điện máy giá rẻ, siêu thị điện máy uy tín, siêu thị điện máy trực tuyến' }}"/>
+
+        @else
+        <title>xe nâng hương anh </title>
+
+        @endif
+       
         <link rel="icon" href="images/favicon/9881icon.png">
-        <meta property="fb:app_id" content="354074088099784">
-     <!--    <meta property="og:title" content="Chuyên Mercedes Benz Chính Hãng - Giá tốt nhất"> -->
-        <meta property="og:type" content="website">
-       <!--  <meta property="og:description" content="Chúng tôi cam kết mức giá tốt nhất - dịch vụ hoàn hảo tới Khách hàng">
+        
         <meta property="og:image" content="">
-        <meta property="og:site_name" content="Chuyên Mercedes Benz Chính Hãng - Giá tốt nhất"> -->
+        <meta property="og:site_name" content=""> 
         <meta property="og:url" content="http://mercedesbenz-hanoi.net/">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

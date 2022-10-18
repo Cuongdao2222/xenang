@@ -9,6 +9,7 @@ use App\Models\products;
 use DB;
 use App\Models\image;
 use Carbon\Carbon;
+use App\Models\metaSeo;
 
 use Gloudemans\Shoppingcart\Facades\Cart;
 
@@ -148,11 +149,15 @@ class blogController extends Controller
     {
         $link = trim($slug);
         $data = products::where('link', $slug)->first();
+
+
          if(!empty($data)){
+
+            $meta = metaSeo::find($data->Meta_id);
 
              $image = image::where('product_id', $data->id)->select('image')->orderBy('id', 'desc')->get();
 
-            return view('frontend.productdetails', compact('data', 'image'));
+            return view('frontend.productdetails', compact('data', 'image', 'meta'));
         }
         else{
             return abort('404');
