@@ -11,7 +11,7 @@
         <tbody>
         @foreach($images as $image)
             <tr>
-                <td><img src="{{ $image->image }}"></td>
+                <td><img src="{{ asset($image->image) }}" width="150px" height="150px"></td>
             
             <td>{{ $image->product_id }}</td>
                 <td width="120">

@@ -51,7 +51,7 @@
         
         
 
-        $images = App\Models\image::where('product_id', $product_id)->get();
+        $images = App\Models\image::where('product_id', $product_id)->orderBy('id', 'desc')->get();
 
         
 
