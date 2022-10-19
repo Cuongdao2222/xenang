@@ -270,7 +270,7 @@
 
     <?php 
 
-        $post =  App\Models\post::take(5)->Orderby('id', 'asc')->get();    
+        $post =  App\Models\post::take(5)->Orderby('id', 'asc')->where('active', 1)->get();    
     ?>  
 
     <section id="newshome">
