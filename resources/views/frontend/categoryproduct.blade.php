@@ -10,11 +10,8 @@
         <div class="tab-content">
             <div id="tab0" class="tab-pane fade in active">
 
-                <?php 
-                    $products1 = App\Models\products::where('category', 1)->take(8)->get();
-
-                ?>
-                @foreach($products1 as $val)
+             
+                @foreach($datas as $val)
                
                 <div class="col-xs-6 col-sm-6 col-md-3">
                     <div class="infobox wow bounceIn">

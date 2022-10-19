@@ -46,7 +46,7 @@ class indexController extends Controller
 
         $resultProduct = [];
 
-        $find_first = product::select('id')->where('name','LIKE', '%'. $data .'%')->OrWhere('product_sku', 'LIKE', '%' . $data . '%')->get()->pluck('id');
+        $find_first = product::select('id')->where('name','LIKE', '%'. $data .'%')->OrWhere('product_sku', 'LIKE', '%' . $data . '%')->where('active', 1)->get()->pluck('id');
 
         if(isset($find_first)){
 

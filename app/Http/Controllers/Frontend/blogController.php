@@ -32,10 +32,9 @@ class blogController extends Controller
             else{
 
 
-                $datas = DB::table('categories')->Join('products', 'categories.id', '=', 'products.category')->where('categories.link',$data)->get();
+                $datas = DB::table('categories')->Join('products', 'categories.id', '=', 'products.category')->where('categories.link',$data)->where('products.active', 1)->get();
 
-              
-
+               
                 return view('frontend.categoryproduct',compact('datas'));
                
             }
