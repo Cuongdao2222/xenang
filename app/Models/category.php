@@ -21,7 +21,7 @@ class category extends Model
 
 
     public $fillable = [
-        'namecategory','link','image', 'parent_id'
+        'namecategory','link','image', 'parent_id','Meta_id',
     ];
 
     /**

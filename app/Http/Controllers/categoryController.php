@@ -8,6 +8,7 @@ use App\Repositories\categoryRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
+use App\Models\metaSeo;
 use DB;
 use Response;
 
@@ -70,6 +71,27 @@ class categoryController extends AppBaseController
             $input['image'] = $filePath;
 
         }
+
+        $meta_title = 'xe nâng Hương Anh';
+
+        $meta_content ='xe nâng Hương Anh';
+
+        $meta_model = new metaSeo();
+
+        $meta_model->meta_title =$meta_title;
+
+        $meta_model->meta_content =$meta_content;
+
+        $meta_model->meta_og_content =$meta_content;
+
+        $meta_model->meta_og_title =$meta_title;
+
+        $meta_model->meta_key_words =$meta_title;
+
+        $meta_model->save();
+
+
+        $input['Meta_id'] = $meta_model['id'];
 
         $category = $this->categoryRepository->create($input);
 
