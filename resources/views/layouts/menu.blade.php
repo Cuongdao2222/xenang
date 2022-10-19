@@ -38,6 +38,24 @@
 </li>
 
 
+<ul style="width: 68%;">
+    @if(count($listGroup)>0)
+    @foreach($listGroup as $value)
+    <li class="child-nav">
+        <a href="{{ route('products.index') }}?category={{ $value->id }}"
+           class="nav-link">
+            <p>{{ $value->namecategory }}</p>
+        </a>
+    </li>
+    @endforeach
+
+    
+    @endif
+
+   
+</ul>
+
+
 @if(Auth::user()->permision == 3)
 
 <li class="nav-item">
@@ -55,24 +73,6 @@
 </li>
 
 @endif
-
-
-<ul style="width: 68%;">
-    @if(count($listGroup)>0)
-    @foreach($listGroup as $value)
-    <li class="child-nav">
-        <a href="{{ route('products.index') }}?category={{ $value->id }}"
-           class="nav-link">
-            <p>{{ $value->namecategory }}</p>
-        </a>
-    </li>
-    @endforeach
-
-    
-    @endif
-
-   
-</ul>
 
 <li class="nav-item">
     <a href="{{ route('posts.index') }}"
