@@ -22,30 +22,56 @@
 @section('content')
 
     <?php 
-     $user = DB::table('users')->select('name', 'permision')->get(); 
-     $permision = ['chưa cấp quyền','admin', 'sale', 'content'];
+     $user = DB::table('users')->select('name', 'permision','id', 'email')->get(); 
+     $permision = ['chưa cấp quyền','content', 'content+sale', 'admin'];
 
     ?>
 
     
     <h2>Danh sách người dùng</h2>
 
+   @if (session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+    @endif
+
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+
     <ul></ul>
    <table>
         <tbody><tr>
             <th>Danh sách</th>
+            <th>Email</th>
             <th>Quyền hạn </th>
             <th>Xóa</th>
         </tr>
+
+        
 
         @foreach($user as $users)
         
         <tr>
             <td>{{ $users->name }}</td>
+            <td>{{ @$users->email }}</td>
             
-            <td><a href="http://localhost/pj2/admins/filters/1/edit">{{ $permision[@$users->permision] }}</a></td>
+            <td> 
+                <select name="option" onchange="location = this.value;">
+                    @foreach($permision as $key => $permisions)
+
+                    <option value="{{ route('updatePermission') }}?id={{ $users->id }}&permision={{ $key }}" {{ $users->permision==$key?'selected':'' }}>{{ $permisions }}</option>
+                 
+                    @endforeach
+                </select>
+
+               
             <td>
-                <a href="">Xóa</a>
+                <a href="{{ route('deleteUser') }}?id={{ $users->id }}">Xóa</a>
             </td>
         </tr>
         @endforeach
