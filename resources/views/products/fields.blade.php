@@ -1,9 +1,11 @@
 <?php 
-    $metaSeo = App\Models\metaSeo::find($products->Meta_id); 
 
+    if(!empty($products)){
+        
+        $metaSeo = App\Models\metaSeo::find($products->Meta_id); 
    
-
- ?>
+    }
+?>
 
 @if(!empty($metaSeo))
 <div class="col-md-12">
