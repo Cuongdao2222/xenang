@@ -1,21 +1,26 @@
 <?php 
-
+   
     if(!empty($products)){
         
         $metaSeo = App\Models\metaSeo::find($products->Meta_id); 
    
     }
+
 ?>
 
-@if(!empty($metaSeo))
+
 <div class="col-md-12">
-     <button><a href="{{  route('metaSeos.edit', $metaSeo->id)  }}">Seo</a></button><br>
+    @if(!empty($metaSeo))
+    <button><a href="{{  route('metaSeos.edit', $metaSeo->id)  }}">Seo</a></button>
+    @endif
+    @if(!empty($products->id))
+    <button><a href="{{ route('images.index')   }}?pid={{ $products->id }}">ảnh sản phẩm</a></button>
+    @endif
+</div>    
+
+
 </div>
-@endif
-
- 
-
-
+<div class="clearfix"></div>
 <!-- Name Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('name', 'Name:') !!}
