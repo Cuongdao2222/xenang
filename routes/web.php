@@ -38,6 +38,8 @@ Route::group(['prefix' => 'admins','middleware' => 'auth'], function() {
 
     Route::post('/addUser', 'customnUserController@addUser')->name('adduser');
 
+    Route::get('update-permision', 'customnUserController@updatePermision')->name('updatePermission');
+
     Route::get('add-hight-light-post', 'postController@addHightLight')->name('add-hight-light-post');
 
     Route::get('lienhe',function(){
