@@ -226,6 +226,12 @@
         <div class="box01__show col-md-7 box-content">
             <div class="owl-carousel detail-slider" id="carousel">
 
+               
+                <div class="item">
+                    <a href="{{ asset($data->images) }}" data-fancybox="gallery"><img src="{{ asset($data->images) }}" data-src="{{ asset($data->images) }}" class=" ls-is-cached lazyloaded image-silde" alt="Smart tivi LG 43LM5750PTC 43 inch Full HD"></a>
+                    
+                </div>
+
                 @if($image->count()>0)
                 @foreach($image as $images)
 
