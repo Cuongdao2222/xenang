@@ -73,8 +73,6 @@ class imageController extends AppBaseController
 
                 $input['image'] = $filePath;
 
-                $input['product_id'] = 1;
-
                 $input['link'] = $filePath;
 
                 $input['order'] = 0;
