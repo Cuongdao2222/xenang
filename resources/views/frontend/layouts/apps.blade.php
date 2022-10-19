@@ -376,13 +376,17 @@
                                             <ul class="dropdown-menu">
                                                 <li><a href="/xe-nang-dien">Xe nâng điện</a>
                                                 </li>
-                                                <li><a href="/xe-nang-dau">Xe nâng dầu112</a>
+                                                <li><a href="/xe-nang-dau">Xe nâng dầu</a>
                                                 </li>
                                                 <li><a href="/xe-nang-tay">Xe nâng tay</a>
                                                 </li>
                                                 <li><a href="/xe-nang-thung-phuy">Xe nâng thùng phuy</a>
                                                 </li>
                                                 <li><a href="/xe-nang-mat-ban">xe nâng mặt bàn</a>
+                                                </li>
+                                                <li><a href="/xe-nang-nguoi">xe nâng người</a>
+                                                </li>
+                                                 <li><a href="/xe-nang-ban-tu-dong">xe nâng bán tự động</a>
                                                 </li>
                                                
                                             </ul>
