@@ -17,6 +17,8 @@ Route::get('/', 'Frontend\indexController@index')->name('homeFe');
 
 Route::get('test', 'crawlController@uploadImageProduct');
 
+Route::get('convery-slug', 'AjaxController@convertLinkPro');
+
 
 Auth::routes(['verify' => true]);
 
