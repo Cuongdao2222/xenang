@@ -376,6 +376,11 @@ class productController extends AppBaseController
         return redirect(route('products.index'));
     }
 
+    public function imagecontent($id)
+    {
+        return view('products.image', compact('id'));
+    }
+
     public function FindbyNameOrModel(Request $request)
     {
         $clearData = trim($request->search);

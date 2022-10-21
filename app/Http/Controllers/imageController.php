@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateimageRequest;
 use App\Repositories\imageRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
+use App\Models\imagescontent;
 use Flash;
 use Response;
 
@@ -50,6 +51,40 @@ class imageController extends AppBaseController
     {
         return view('images.create');
     }
+
+    public function productContentImage(Request $request)
+    {
+        $input = $request->all();
+
+        if ($request->hasFile('image')) {
+
+            $file_upload = $request->file('image');
+
+            foreach ($file_upload as $key => $value) {
+                $name = time() . '_' . $value->getClientOriginalName();
+
+                $filePath = $value->storeAs('uploads/product', $name, 'public');
+
+                $input['image'] = $filePath;
+
+                unset($input['_token']);
+
+                $images = imagescontent::create($input);
+
+            }
+            if($input['option']==1){
+
+
+                return redirect(route('products.edit', $input['product_id']).'?mota=1')->with('success-content', 'thanh cong');
+            }
+            else{
+                return redirect(route('posts.edit', $input['product_id']))->withInput();
+            }
+            
+            
+        }
+    }
+
 
     /**
      * Store a newly created image in storage.

@@ -59,6 +59,134 @@
     {!! Form::textarea('content', null, ['class' => 'form-control']) !!}
 </div>
 
+<?php 
+
+    $imagecontent = App\Models\imagescontent::where('product_id', $products->id)->where('option',1)->get();
+?>
+
+<div><a href="javascript:void(0)" onclick="clickChangeImageContent()">Thêm ảnh content</a></div>
+
+<div class="col-md-12 col-sm-12"> <div id="article_media_holder"> 
+    <style type="text/css"> a.preview_media{
+        position:relative; /*this is the key*/
+        z-index:24;}
+        a.preview_media:hover{z-index:25; cursor:pointer}
+        a.preview_media span{display: none}
+        a.preview_media:hover span{
+        display:block;
+        position:absolute;
+        top:-120px; left:50px; width:auto;
+        text-align: center} 
+    </style> 
+
+    <table class="big_table" border="1" bordercolor="#CCCCCC" cellspacing="0" cellpadding="3"> 
+        <tbody> 
+            <tr> 
+                 @if(isset($imagecontent))
+                @foreach($imagecontent as $key => $values)
+                <?php 
+                    $images = str_replace(['http://dienmaynguoiviet.net', 'https://dienmaynguoiviet.net'], 'https://dienmaynguoiviet.vn', $values->image);
+
+                ?> 
+                <td class="img1{{ $key }}"><a href="javascript:void(0);" onclick="click1('images1{{ $key }}', '{{ asset($images) }}')"><img src="{{ asset($images) }}" style="max-width:100px; max-height:130px" id="img1{{ $key }}"></a></td>
+             
+                @endforeach
+                @endif 
+            </tr> 
+        </tbody> 
+    </table> 
+    <br> 
+    <br> 
+</div>
+
+ 
+<script type="text/javascript"> 
+    $(document).ready(function() {
+        getContent();
+    });
+
+        function getContent() {
+             
+                    console.log(1);
+        }
+        
+        function clickChangeImageContent() {
+
+           localStorage.removeItem('infoDetailsPost');
+
+            content = CKEDITOR.instances['content'].getData();
+           
+            localStorage.setItem('infoDetailsPost', content);
+
+            @if(!empty($products->id))
+          
+            url = '{{ route('imagescontent', $products->id) }}?option=1';
+            $(location).attr('href',url);
+            @endif
+            
+        }
+
+         function removeHref() {
+
+            let content = CKEDITOR.instances.content.getData();
+
+            var regex = /(<\s*a([^>]+)>|<\/\s*a\s*>)/ig;
+
+            contents = content.replace(regex, ""); 
+
+            CKEDITOR.instances.content.setData(contents);
+        }
+
+        function code() {
+            CKEDITOR.instances['content'].insertText('cuong');
+        }
+        var activeReplace = [];
+       
+        function clicks(id,src) {
+            editor = CKEDITOR.instances.content;
+            var documentWrapper = editor.document; // replace by your CKEDitor instance ID
+            var documentNode = documentWrapper.$; // or documentWrapper['$'] ;
+            var edata = editor.getData();
+            documentNode.getElementById(id).scrollIntoView();
+            ids = id.replace('images', 'img');
+            $('.tdimg').removeClass('border1');
+            activeReplace.push(src);
+            activeReplace.push(id);
+            activeReplace.push(ids);
+            $('.'+ids).addClass('border1');
+             console.log(activeReplace);
+        }
+
+        function click1(id, src) {
+
+            if(activeReplace.length==0){
+                img = '<img src="'+src+'">';
+                CKEDITOR.instances['content'].insertHtml(img);
+                
+            }
+            else{
+                editor = CKEDITOR.instances.content;
+                var documentWrapper = editor.document; // replace by your CKEDitor instance ID
+                var documentNode = documentWrapper.$; // or documentWrapper['$'] ;
+                var edata = editor.getData();
+                var replaced_text = edata.replace(activeReplace[0], src); // you could also use a regex in the replace 
+                editor.setData(replaced_text);
+                documentNode.getElementById(activeReplace[1]).scrollIntoView();
+                $('#'+activeReplace[2]).attr('src', src);
+                activeReplace.pop();
+                activeReplace.pop();
+                activeReplace.pop();
+                $('.tdimg').removeClass('border1');
+            }
+           
+        } 
+</script> 
+
+</div>
+
+
+
+
 <!-- salient_features Field -->
 <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('Đặc điểm nổi bật', 'Đặc điểm nổi bật:') !!}

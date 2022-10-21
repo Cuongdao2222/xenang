@@ -54,6 +54,10 @@ Route::group(['prefix' => 'admins','middleware' => 'auth'], function() {
 
     Route::resource('metaSeos', 'metaSeoController');
 
+    Route::get('imagescontent/{id}', 'productController@imagecontent')->name('imagescontent');
+
+     Route::post('productContentImage', 'imageController@productContentImage')->name('imagecontents');
+
 
     Route::resource('banners', 'bannerController');
 
@@ -80,6 +84,8 @@ Route::group(['prefix' => 'admins','middleware' => 'auth'], function() {
 Route::get('/lien-he', 'Frontend\blogController@lienhe')->name('lien-he');
 
 Route::get('/search', 'Frontend\indexController@searchByInput')->name('search');
+
+
 
 
 Route::get('/crawllink', 'crawlController@updateContent');
