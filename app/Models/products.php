@@ -34,6 +34,7 @@ class products extends Model
         'link',
         'specifications',
         'salient_features',
+        'Meta_id'
     ];
 
     /**
