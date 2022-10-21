@@ -81,11 +81,11 @@ class productsController extends AppBaseController
          $input['price'] = str_replace([',','.'], '', $input['price']);
         $input['link'] = convertSlug($input['name']);
 
-         $input['ProductSku'] ='';
+         
 
         //add meta seo cho product
 
-        $meta_title = $input['ProductSku'].', '.$input['Name'].' giá rẻ, Trả góp 0%';
+        $meta_title = '';
 
         $meta_content = 'Mua '.$input['Name'].' giá rẻ. Miễn phí giao hàng & Lắp đặt. Đổi lỗi trong 7 ngày đầu. Liên hệ hotline 0247.303.6336 để mua hàng và biết thêm thông tin chi tiết'; 
 
