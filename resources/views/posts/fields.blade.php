@@ -1,9 +1,12 @@
 
 <?php  $url_domain =  Config::get('app.url') ?>
 
-<?php 
-    $metaSeo = App\Models\metaSeo::find($post->Meta_id); 
 
+<?php 
+
+    if(!empty($posts)){
+         $metaSeo = App\Models\metaSeo::find($posts->Meta_id); 
+    }
    
 
  ?>
