@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateproductsRequest;
 use App\Repositories\productsRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
+use App\Models\metaSeo;
 use Flash;
 use Response;
 
@@ -79,6 +80,29 @@ class productsController extends AppBaseController
 
          $input['price'] = str_replace([',','.'], '', $input['price']);
         $input['link'] = convertSlug($input['name']);
+
+        //add meta seo cho product
+
+        $meta_title = $input['ProductSku'].', '.$input['Name'].' giá rẻ, Trả góp 0%';
+
+        $meta_content = 'Mua '.$input['Name'].' giá rẻ. Miễn phí giao hàng & Lắp đặt. Đổi lỗi trong 7 ngày đầu. Liên hệ hotline 0247.303.6336 để mua hàng và biết thêm thông tin chi tiết'; 
+
+        $meta_model = new metaSeo();
+
+        $meta_model->meta_title =$meta_title;
+
+        $meta_model->meta_content =$meta_content;
+
+        $meta_model->meta_og_content =$meta_content;
+
+        $meta_model->meta_og_title =$meta_title;
+
+        $meta_model->meta_key_words =$meta_title;
+
+        $meta_model->save();
+
+        $input['Meta_id'] = $meta_model['id'];
+
 
         $products = $this->productsRepository->create($input);
 
