@@ -81,7 +81,7 @@ class productsController extends AppBaseController
          $input['price'] = str_replace([',','.'], '', $input['price']);
         $input['link'] = convertSlug($input['name']);
 
-         $input['productSku'] ='';
+         $input['ProductSku'] ='';
 
         //add meta seo cho product
 
