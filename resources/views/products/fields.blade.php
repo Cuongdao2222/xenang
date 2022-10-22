@@ -197,7 +197,7 @@
 </div>
 
 
-
+@if(empty($get_content))
 
 <!-- salient_features Field -->
 <div class="form-group col-sm-12 col-lg-12">
@@ -230,7 +230,7 @@
     {!! Form::text('quatity', null, ['class' => 'form-control']) !!}
 </div>
 
-
+@endif
 <?php  $url_domain =  Config::get('app.url') ?>
 
 <script type="text/javascript">
