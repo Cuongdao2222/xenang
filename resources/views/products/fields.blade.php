@@ -60,8 +60,11 @@
 </div>
 
 <?php 
-
-    $imagecontent = App\Models\imagescontent::where('product_id', $products->id)->where('option',1)->get();
+    
+    if(!empty($products)){
+         $imagecontent = App\Models\imagescontent::where('product_id', $products->id)->where('option',1)->get();
+    }
+   
 ?>
 
 <div><a href="javascript:void(0)" onclick="clickChangeImageContent()">Thêm ảnh content</a></div>
