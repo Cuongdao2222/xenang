@@ -110,7 +110,9 @@ class productsController extends AppBaseController
 
         Flash::success('Products saved successfully.');
 
-        return redirect(route('products.index'));
+        return redirect()->route('products.edit', $products['id'].'?page=content');
+
+        // return redirect(route('products.index'));
     }
 
     /**

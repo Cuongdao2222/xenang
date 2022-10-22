@@ -3,19 +3,31 @@
 
 
 <?php 
+    
+    
+    if(!empty($post)){
 
-    if(!empty($posts)){
-         $metaSeo = App\Models\metaSeo::find($posts->Meta_id); 
+        $metaSeo = App\Models\metaSeo::find($post->Meta_id); 
+
     }
+
+    $get_content = $_GET['page']??'';
    
 
  ?>
+
+
+@if(empty($get_content))
+
+
 
 @if(!empty($metaSeo))
 <div class="col-md-12">
      <button><a href="{{  route('metaSeos.edit', $metaSeo->id)  }}">Seo</a></button><br>
 </div>
 @endif
+
+
 
 <div class="col-md-12 draft-article" >
     <button type="button" class="btn btn-info article-but" onclick="setDataForm()">Bài viết nháp</button>
@@ -58,14 +70,11 @@
 
 
 
-<!-- Content Field -->
-<div class="form-group col-sm-12 col-md-12">
-    {!! Form::label('content', 'Content:') !!}
-    {!! Form::textarea('content', null, ['class' => 'form-control content-input']) !!}
-</div>
+
+
 
 <!-- Image Field -->
-<div class="form-group col-sm-6">
+<div class="form-group col-md-6">
     {!! Form::label('image', 'Image:') !!}
     <div class="input-group">
         <div class="custom-file">
@@ -76,6 +85,48 @@
 </div>
 <div class="clearfix"></div>
 
+
+
+@endif
+
+
+
+
+
+
+@if(isset($post->id))
+
+<!-- Content Field -->
+<div class="form-group col-sm-12 col-md-12">
+    {!! Form::label('content', 'Content:') !!}
+    {!! Form::textarea('content', null, ['class' => 'form-control content-input']) !!}
+</div>
+
+<?php  
+
+    $imagecontent = App\Models\imagescontent::where('product_id', $post->id)->where('option',2)->get();
+?>
+
+<div><a href="{{ route('imagescontent', $post->id) }}?option=2">Thêm ảnh content</a></div>
+
+<div class="col-md-12">
+    <table class="big_table" border="1" bordercolor="#CCCCCC" cellspacing="0" cellpadding="3">
+        <tbody>
+            <tr>
+                @if(isset($imagecontent))
+                @foreach($imagecontent as $key => $values)
+                <td class="img1{{ $key }}"><a href="javascript:void(0);" onclick="click1('images1{{ $key }}', '{{ asset($values->image) }}')"><img src="{{ asset($values->image) }}" style="max-width:100px; max-height:130px" id="img1{{ $key }}"></a></td>
+             
+                @endforeach
+                @endif
+            </tr>
+            
+           
+        </tbody>
+
+    </table>
+</div>
+@endif
 
 
 
@@ -90,7 +141,7 @@
     }
 
 
-
+    var activeReplace = [];
 
     function getDataform(){
 
@@ -150,6 +201,29 @@
 
 
     });
+
+     function click1(id, src) {
+        if(activeReplace.length==0){
+            img = '<img src="'+src+'">';
+            CKEDITOR.instances['content'].insertHtml(img);
+        }
+        else{
+            editor = CKEDITOR.instances.content;
+            var documentWrapper = editor.document; // replace by your CKEDitor instance ID
+            var documentNode = documentWrapper.$; // or documentWrapper['$'] ;
+            var edata = editor.getData();
+            var replaced_text = edata.replace(activeReplace[0], src); // you could also use a regex in the replace 
+            editor.setData(replaced_text);
+            documentNode.getElementById(activeReplace[1]).scrollIntoView();
+            $('#'+activeReplace[2]).attr('src', src);
+            activeReplace.pop();
+            activeReplace.pop();
+            activeReplace.pop();
+            $('.tdimg').removeClass('border1');
+        }
+
+        
+    }
 
 
     

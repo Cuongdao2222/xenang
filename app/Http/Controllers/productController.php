@@ -198,6 +198,8 @@ class productController extends AppBaseController
 
         $product = $this->productRepository->create($input);
 
+        dd(1);
+
         return redirect()->route('products.edit', $product['id']);
         
         // return Redirect()->back()->with('id', $product['id']);

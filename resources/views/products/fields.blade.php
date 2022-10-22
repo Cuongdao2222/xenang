@@ -1,5 +1,5 @@
 <?php 
-   
+    $get_content = $_GET['page']??'';
     if(!empty($products)){
         
         $metaSeo = App\Models\metaSeo::find($products->Meta_id); 
@@ -8,7 +8,7 @@
 
 ?>
 
-
+@if(empty($get_content))
 <div class="col-md-12">
     @if(!empty($metaSeo))
     <button><a href="{{  route('metaSeos.edit', $metaSeo->id)  }}">Seo</a></button>
@@ -52,12 +52,21 @@
     {!! Form::select('category', $new_category, null, ['class' => 'form-control custom-select']) !!}
 </div>
 
+@endif
+
+<!-- endgetcontent -->
+
+@if(!empty($products))
 
 <!-- Content Field -->
 <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('content', 'Content:') !!}
     {!! Form::textarea('content', null, ['class' => 'form-control']) !!}
 </div>
+
+
+
+
 
 <?php 
     
@@ -101,7 +110,7 @@
     <br> 
     <br> 
 </div>
-
+@endif
  
 <script type="text/javascript"> 
     $(document).ready(function() {
