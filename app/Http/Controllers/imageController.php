@@ -72,13 +72,15 @@ class imageController extends AppBaseController
                 $images = imagescontent::create($input);
 
             }
+
+            
             if($input['option']==1){
 
 
-                return redirect()->back();
+                return redirect(route('products.edit', $input['product_id']).'?page=content');
             }
             else{
-                return redirect()->back();
+                return redirect(route('posts.edit', $input['product_id']).'?page=content')->withInput();
             }
             
             
