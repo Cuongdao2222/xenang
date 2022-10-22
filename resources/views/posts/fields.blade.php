@@ -15,17 +15,18 @@
    
 
  ?>
+ @if(!empty($metaSeo))
+<div class="col-md-12">
+     <button><a href="{{  route('metaSeos.edit', $metaSeo->id)  }}">Seo</a></button><br>
+</div>
+@endif
 
 
 @if(empty($get_content))
 
 
 
-@if(!empty($metaSeo))
-<div class="col-md-12">
-     <button><a href="{{  route('metaSeos.edit', $metaSeo->id)  }}">Seo</a></button><br>
-</div>
-@endif
+
 
 
 

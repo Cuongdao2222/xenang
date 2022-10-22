@@ -179,9 +179,15 @@ class productsController extends AppBaseController
 
             $input['images'] = $filePath;
         }
-        $input['price'] = str_replace([',','.'], '', $input['price']);
 
-        $input['link'] = convertSlug($input['name']);
+        if(!empty($input['price'])){
+             $input['price'] = str_replace([',','.'], '', $input['price']);
+        }
+       
+        if(!empty($input['name'])){
+             $input['link'] = convertSlug($input['name']);
+        }
+       
 
         if (empty($products)) {
             Flash::error('Products not found');

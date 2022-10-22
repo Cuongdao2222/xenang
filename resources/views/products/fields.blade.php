@@ -8,7 +8,6 @@
 
 ?>
 
-@if(empty($get_content))
 <div class="col-md-12">
     @if(!empty($metaSeo))
     <button><a href="{{  route('metaSeos.edit', $metaSeo->id)  }}">Seo</a></button>
@@ -16,10 +15,12 @@
     @if(!empty($products->id))
     <button><a href="{{ route('images.index')   }}?pid={{ $products->id }}">ảnh sản phẩm</a></button>
     @endif
-</div>    
+</div>  
+
+@if(empty($get_content))
+  
 
 
-</div>
 <div class="clearfix"></div>
 <!-- Name Field -->
 <div class="form-group col-sm-6">

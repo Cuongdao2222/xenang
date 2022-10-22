@@ -178,7 +178,7 @@ class postController extends AppBaseController
 
             $input['image'] = $filePath;
         }
-        $input['link'] = $this->createSlug($input['title']);
+       
 
       
 
